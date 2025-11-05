@@ -1,0 +1,23 @@
+=== Ejecutando comandos ===
+
+--- Comando 1: ping a dominio inexistente ---
+La solicitud de ping no pudo encontrar el host www.dam2chomon.org. Compruebe el nombre y
+vuelva a intentarlo.
+
+--- Comando 2: ping a Google ---
+
+Haciendo ping a www.google.es [142.250.200.99] con 32 bytes de datos:
+Respuesta desde 142.250.200.99: bytes=32 tiempo=31ms TTL=116
+Respuesta desde 142.250.200.99: bytes=32 tiempo=23ms TTL=116
+Respuesta desde 142.250.200.99: bytes=32 tiempo=30ms TTL=116
+Respuesta desde 142.250.200.99: bytes=32 tiempo=19ms TTL=116
+
+Estad°sticas de ping para 142.250.200.99:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M°nimo = 19ms, M†ximo = 31ms, Media = 25ms
+
+--- Comando 3: comando incorrecto ---
+
+=== Fin de ejecuci√≥n ===
