@@ -1,0 +1,32 @@
+
+C:\Users\Usuario.DESKTOP-1CE050O\IdeaProjects\Ejercicios 1 Tema 1 PSP>ping www.dam2chomon.org 
+La solicitud de ping no pudo encontrar el host www.dam2chomon.org. Compruebe el nombre y
+vuelva a intentarlo.
+
+C:\Users\Usuario.DESKTOP-1CE050O\IdeaProjects\Ejercicios 1 Tema 1 PSP>ping www.google.es 
+
+Haciendo ping a www.google.es [216.58.215.131] con 32 bytes de datos:
+Respuesta desde 216.58.215.131: bytes=32 tiempo=21ms TTL=114
+Respuesta desde 216.58.215.131: bytes=32 tiempo=23ms TTL=114
+Respuesta desde 216.58.215.131: bytes=32 tiempo=22ms TTL=114
+Respuesta desde 216.58.215.131: bytes=32 tiempo=25ms TTL=114
+
+Estad¡sticas de ping para 216.58.215.131:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M¡nimo = 21ms, M ximo = 25ms, Media = 22ms
+
+C:\Users\Usuario.DESKTOP-1CE050O\IdeaProjects\Ejercicios 1 Tema 1 PSP>ping www.iesch.org 
+
+Haciendo ping a iesch.org [79.139.120.28] con 32 bytes de datos:
+Respuesta desde 79.139.120.28: bytes=32 tiempo=29ms TTL=46
+Respuesta desde 79.139.120.28: bytes=32 tiempo=24ms TTL=46
+Respuesta desde 79.139.120.28: bytes=32 tiempo=23ms TTL=47
+Respuesta desde 79.139.120.28: bytes=32 tiempo=24ms TTL=47
+
+Estad¡sticas de ping para 79.139.120.28:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M¡nimo = 23ms, M ximo = 29ms, Media = 25ms
