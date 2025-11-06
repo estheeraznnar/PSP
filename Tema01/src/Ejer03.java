@@ -65,10 +65,11 @@ public class Ejer03 {
         }
 
         /**
+         * ESTO NO ES NECESARIO SE PUEDE HACER SIN ESTO
          * Espero a que ambos hilos finalicen
          * join() hace que el hilo actual (main) espere a que el otro termine
          */
-        try {
+        /*try {
             //Espera a que el hilo1 termine
             hilo1.join();
             //Espera a que hilo2 termine
@@ -84,7 +85,7 @@ public class Ejer03 {
             System.out.println("Tiempo total de ejecucion: " + (tiempoFin - tiempoInicio) + " milisegundos");
         }catch (InterruptedException e){
             System.err.println("Error esperando a los hilos: " + e.getMessage());
-        }
+        }*/
 
         System.out.println("--- Fin del programa ---");
     }
@@ -132,14 +133,11 @@ class HiloHola implements Runnable{
             }
         }catch (InterruptedException e){
             //Si se lanza interrumpcion entramos aqui
-            System.out.println("\n[HILO1] Interrupcion recibida despues de  " + cont + "interrupciones");
-
-            //Restauro el estado de la interrupcion para que otros metodos lo detecten
-            Thread.currentThread().interrupt();
+            System.out.println("\n Interrupcion recibida despues de  " + cont + "interrupciones");
         }
 
         //Mensaje indicando que el hilo ha finalizado
-        System.out.println("[HILO 1] Finalizado");
+        System.out.println("Hilo 1 Finalizado");
     }
 }
 
@@ -159,7 +157,7 @@ class HiloMundo implements Runnable{
     @Override
     public void run() {
         // Mensaje indicando que este hilo ha comenzado
-        System.out.println("[HILO 2] Iniciado");
+        //System.out.println("[HILO 2] Iniciado");
 
         try {
             /**

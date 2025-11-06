@@ -7,7 +7,7 @@ public class Ejercicio2 {
         String rutaDocumentos = System.getProperty("user.home") + "\\Documents\\";
         File ficheroBat = new File(rutaDocumentos + "comandos.bat");
         File logSalida = new File(rutaDocumentos + "salida.log");
-        File logErrores = new File(rutaDocumentos + "errores.log");
+        File logErrores = new File(rutaDocumentos +"errores.log");
 
         // Crear el ProcessBuilder
         ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", ficheroBat.getAbsolutePath());

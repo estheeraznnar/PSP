@@ -1,5 +1,5 @@
 public class Ejercicio3 {
-    public static void main(String[] args) {
+    public static void main(String [] args) {
         Thread hilo1 = new Thread(new HiloHola(), "Hilo-Hola");
         Thread hilo2 = new Thread(new HiloMundo(), "Hilo-Mundo");
 

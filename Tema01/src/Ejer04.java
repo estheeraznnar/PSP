@@ -1,0 +1,2 @@
+public class Ejer04 {
+}

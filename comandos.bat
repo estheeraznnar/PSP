@@ -1,5 +1,5 @@
 @echo off
-echo === Ejecutando comandos ===
+echo --- Ejecutando comandos ----
 
 echo.
 echo --- Comando 1: ping a dominio inexistente ---
