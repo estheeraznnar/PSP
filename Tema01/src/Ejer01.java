@@ -7,7 +7,7 @@ public class Ejer01 {
     public static void main(String[] args) {
 
         //Ruta completa del fichero de texto
-        String rutaFichero = "C:\\Users\\dam2\\_ESTHER_\\PSP\\prueba.txt" ;
+        String rutaFichero = "prueba.txt" ;
         //Ruta del ejecutable
         String rutaNotepad = "C:\\Program Files\\Notepad++\\notepad++.exe";
 
