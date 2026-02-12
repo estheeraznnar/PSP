@@ -6,6 +6,20 @@ import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Ejercicio 2: Servicio HTTP sencillo para la consulta de información:
+ * Implementa un servidor HTTP básico que escuche peticiones en un puerto determinado y responda con diferentes contenidos en función de la URL solicitada.
+ * Requisitos:
+ * • El servidor debe:
+ * • Escuchar peticiones HTTP GET.
+ * • Responder con código de estado HTTP adecuado (200, 404).
+ * • Implementar al menos las siguientes rutas:
+ *      • / → Devuelve una página HTML de bienvenida.
+ *      • /hora → Devuelve la fecha y hora actual del sistema.
+ *      • /info → Devuelve información del sistema (nombre del equipo y sistema operativo).
+ * • El servidor debe ser capaz de atender varias peticiones de forma secuencial o concurrente.
+ **/
+
 public class HTTP {
 
     public static void main(String[] args) {

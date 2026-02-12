@@ -5,6 +5,32 @@ import jakarta.mail.internet.*;
 import java.util.Properties;
 import java.util.Scanner;
 
+/**
+ * Ejercicio 3: Envío automatizado de correos electrónicos
+ * Desarrolla una aplicación que permita el envío de correos electrónicos utilizando los protocolos de correo electrónico estándar (SMTP).
+ * Requisitos:
+ * •
+ * La aplicación debe:
+ * •
+ * Solicitar al usuario:
+ * •
+ * Dirección de correo emisor
+ * •
+ * Dirección de correo destinatario
+ * •
+ * Asunto
+ * •
+ * Cuerpo del mensaje
+ * •
+ * Conectarse a un servidor SMTP autenticado.
+ * •
+ * Enviar el correo electrónico correctamente.
+ * •
+ * Mostrar mensajes de confirmación o error.
+ * •
+ * (Opcional) Adjuntar un archivo al correo electrónico.
+ */
+
 public class Ejer03 {
 
     public static void main(String[] args) {
