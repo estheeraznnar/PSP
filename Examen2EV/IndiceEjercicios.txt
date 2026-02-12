@@ -1,0 +1,68 @@
+TEMA 3 - EJERCICIOS INDIVIDUALES
+Ejercicio T3-1: Cliente FTP básico
+Palabras clave: FTP, FTPS, subir, descargar, listar, directorio, fichero, archivo, upload, download
+Conecta a un servidor FTP con usuario/contraseña. Permite listar directorio, cambiar directorio, descargar fichero (retrieveFile) y subir fichero (storeFile). Usa FTPSClient con TLS, TrustManager, modo pasivo y BINARY_FILE_TYPE.
+Ejercicio T3-2: Servidor HTTP sencillo
+Palabras clave: servidor HTTP, GET, rutas, 200, 404, hora, info, ServerSocket, puerto
+Servidor HTTP con ServerSocket que escucha peticiones GET. Rutas: / bienvenida, /hora fecha actual, /info sistema operativo. Responde con códigos 200/404. Concurrencia con hilos.
+Ejercicio T3-3: Envío de correos SMTP
+Palabras clave: correo, email, SMTP, adjunto, attachment, jakarta.mail, MimeMessage, gmail
+Envía correos con jakarta.mail. Pide emisor, destinatario, asunto, cuerpo. Opcionalmente adjunta archivo con MimeMultipart("mixed"), MimeBodyPart, FileDataSource y DataHandler.
+
+TEMA 4 - EJERCICIOS INDIVIDUALES
+Ejercicio T4-1: Hash SHA-256
+Palabras clave: hash, SHA-256, SHA256, integridad, MessageDigest, verificar hash, comprobar hash
+Genera hash SHA-256 de un mensaje con MessageDigest.getInstance("SHA-256"). Codifica en UTF_16LE y devuelve en Base64. Método checkHash para verificar comparando byte a byte.
+Ejercicio T4-2: Registro y Login con Salted Password Hashing
+Palabras clave: login, registro, contraseña, password, salt, PBKDF2, autenticación, cuenta, credencial, intentos
+Sistema completo de crear cuenta y login. Usa SecureRandom para salt de 32 bytes, PBKDF2WithHmacSHA256 para hash. Guarda salt+hash concatenados en 64 bytes como Base64. Máximo 3 intentos. Clases: Credential, LoginSesion, PasswordUtil, AccountUtil, Auth.
+Ejercicio T4-3: Cifrado/Descifrado AES ficheros
+Palabras clave: AES, cifrar fichero, descifrar fichero, simétrico, clave simétrica, CipherOutputStream, CipherInputStream
+Cifra texto en un fichero con AES/CBC/PKCS5Padding. Usa SecretKeySpec para clave de 16 bytes, IvParameterSpec para IV. Escribe con CipherOutputStream/BufferedWriter, lee con CipherInputStream/BufferedReader.
+Ejercicio T4-4: Cifrado/Descifrado RSA
+Palabras clave: RSA, clave pública, clave privada, asimétrico, cifrar RSA, descifrar RSA, KeyPairGenerator
+Genera par de claves RSA 2048 bits. Cifra con clave pública (X509EncodedKeySpec), descifra con clave privada (PKCS8EncodedKeySpec). Usa RSA/ECB/PKCS1Padding, texto en UTF_16LE.
+Ejercicio T4-5: HMAC-SHA256
+Palabras clave: HMAC, HMACSHA256, MAC, integridad, clave secreta, verificar HMAC
+Genera HMAC-SHA256 con Mac.getInstance("HmacSHA256") y SecretKeySpec. Clave secreta de 32 bytes con SecureRandom. Verifica integridad comparando byte a byte. Texto en UTF_16LE.
+Ejercicio T4-6: HMAC-SHA512
+Palabras clave: HMACSHA512, HMAC512, integridad 512
+Igual que T4-5 pero con HmacSHA512 y clave de 64 bytes (512 bits).
+Ejercicio T4-7: Firma digital RSA
+Palabras clave: firma digital, firmar RSA, verificar firma, Signature, SHA256withRSA, sign, verify
+Firma mensaje con clave privada usando Signature.getInstance("SHA256withRSA") y initSign. Verifica firma con clave pública usando initVerify. Texto en UTF_16LE.
+Ejercicio T4-8: Firma digital ECDsa
+Palabras clave: ECDsa, ECDSA, firma elíptica, curva elíptica, SHA256withECDSA, EC
+Igual que T4-7 pero con curvas elípticas. KeyPairGenerator.getInstance("EC") con 256 bits. Signature.getInstance("SHA256withECDSA"). Firma con privada, verifica con pública.
+Ejercicio T4-9: ECDiffieHellman intercambio de claves
+Palabras clave: DiffieHellman, ECDH, intercambio claves, clave compartida, Alice, Bob, KeyAgreement
+Alice y Bob generan claves EC. Derivan clave compartida con KeyAgreement.getInstance("ECDH"). De la clave compartida sacan clave AES de 16 bytes (SHA-256 + primeros 16 bytes). Cifran/descifran con AES.
+Ejercicio T4-10: Claims y autorización
+Palabras clave: claims, autorización, rol, permiso, ClaimsIdentity, ClaimsPrincipal, acceso
+Sistema de autorización con claims (pares tipo-valor). Clases Claim, ClaimsIdentity, ClaimsPrincipal, ThreadPrincipal. Métodos hasClaim y getClaimValue para comprobar acceso a recursos según rol, departamento, permisos.
+
+EJERCICIOS COMBINADOS (TEMA 3 + TEMA 4)
+Ejercicio C1: HTTP + Hash SHA-256 (verificar integridad web)
+Palabras clave: HTTP hash, integridad web, descargar verificar, contenido cambiado
+Descarga contenido web con HttpClient, calcula hash SHA-256, vuelve a descargar y compara hashes para detectar si el contenido ha cambiado.
+Ejercicio C2: Servidor HTTP + Salted Password Hashing (servidor con login)
+Palabras clave: servidor login, servidor registro, HTTP autenticación, POST register, POST login, ruta protegida, token sesión
+Servidor HTTP con rutas /register (POST), /login (POST), /secreto (GET protegido). Registro con PBKDF2 + salt. Login genera token de sesión. Rutas protegidas verifican token en cabecera Authorization: Bearer.
+Ejercicio C3: SMTP + AES (correo cifrado)
+Palabras clave: correo cifrado, email cifrado, SMTP AES, cifrar cuerpo correo
+Cifra el cuerpo del correo con AES antes de enviarlo por SMTP. El receptor descifra con la misma clave/IV. Combina AESUtil.encrypt/decrypt con jakarta.mail.
+Ejercicio C4: FTP + RSA (subir fichero cifrado)
+Palabras clave: FTP cifrado, FTP RSA, subir cifrado, descargar descifrar, fichero cifrado FTP
+Genera claves RSA. Cifra texto con clave pública antes de subirlo al FTP (storeFile con ByteArrayInputStream). Al descargar, descifra con clave privada (retrieveFile con ByteArrayOutputStream).
+Ejercicio C5: HTTP + Firma digital RSA (API con firma)
+Palabras clave: API firma digital, HTTP firma, verificar firma servidor, X-Signature, POST firmado
+Cliente envía su clave pública al servidor (POST /register-key). Después envía datos firmados con clave privada en cabecera X-Signature (POST /datos). Servidor verifica firma antes de procesar.
+Ejercicio C6: SMTP + HMACSHA256 (correo con verificación integridad)
+Palabras clave: correo HMAC, email integridad, SMTP HMAC, verificar correo
+Envía correo con HMAC-SHA256 del cuerpo en el asunto. El receptor verifica que el cuerpo no ha sido alterado comprobando el HMAC con la clave compartida.
+Ejercicio C7: Servidor HTTP + JWT + Claims (servidor con tokens JWT)
+Palabras clave: JWT, token, JSON Web Token, servidor JWT, claims servidor, admin, autorización JWT, Bearer JWT
+Servidor HTTP completo con JWT. Registro con PBKDF2, login genera JWT (header.payload.signature firmado con HMAC-SHA256). Rutas protegidas verifican JWT y comprueban claims. /admin requiere Role: Administrator, /user cualquier autenticado.
+Ejercicio C8: FTP + ECDiffieHellman + AES (intercambio seguro ficheros)
+Palabras clave: FTP ECDH, FTP DiffieHellman, FTP AES, intercambio seguro, Alice Bob FTP, clave compartida FTP
+Alice y Bob hacen intercambio ECDH para derivar clave AES compartida. Alice cifra con AES y sube al FTP. Bob descarga y descifra con su clave compartida (que es la misma). Combina ECDHUtil + FTPSClient.

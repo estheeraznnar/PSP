@@ -1,0 +1,31 @@
+package org.iesch.psp.ReadURL;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class ReadURLOther {
+    public static void main(String[] args) {
+        try {
+            // Creamos el objeto URL
+            URL url = new URL("https://www.example.com");
+
+            // Abrimos un reader que lee directamente de la URL
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(url.openStream()));
+
+            // Recorremos el reader y lo mostramos por consola
+            String line;
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+            }
+            in.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
