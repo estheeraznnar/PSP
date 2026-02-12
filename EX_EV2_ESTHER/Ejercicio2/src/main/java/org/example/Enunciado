@@ -1,0 +1,15 @@
+Se desea crear un programa en java donde se tendra un servidor TCP multihilo capaz de atender multiples clientes simultaneamente.
+
+    -El cliente enviara al servidor un numero entero positivo
+    -El servidor calculara el factorial de dicho numero
+    -El servidor generara una cadena de resultado que contendra
+        -El puerto de origen del cliente
+        -El numero recibido
+        -El resultado del factorial
+    -El servidor devolvera esta cadena al cliente
+    -El cliente mostrara el resultado por pantalla
+
+Para realizar las pruebas
+    -El servidor escuchara en el puerto 7001
+    -Cliente y servidor se ejecutaran en la misma maquina y dentro del mismo proyecto
+    -El servidor debera crear un nuevo hilo por cada cliente que se conecte

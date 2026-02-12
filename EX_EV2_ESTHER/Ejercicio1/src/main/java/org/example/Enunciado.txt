@@ -1,0 +1,12 @@
+Crea un programa en java que contenga un cliente y un servidor ejecutados en la misma maquina, donde el servidor escuche las peticiones
+por el puerto 7000UDP, mientras que sera el propio SO quien se encargue de asignar automaticamente el puerto del cliente.
+La secuencia de funcionamiento sera la siguiente:
+    -El cliente enviara al servidor un mensaje solicitando la hora actual
+    -El servidor respondera al cliente enviandole la hora actual del sistema junto con el puerto de origen del cliente.
+    -El cliente mostrara por pantalla el mensaje recibido
+    -El sirvidor creara un objeto de la clase SesionCliente, que contendra:
+        -Un identificador con el formato SesionPUERTO
+        - La fecha y hora exactas de la peticion
+        -Un valor entero aleatorio entre 1 y 50
+    -El servidor permanecera escuchandopeticiones hasta que transcurran 90 segundos sin recibir ninguna solicitud, momento en el que
+    cerrara su ejecucion automaticamente.

@@ -1,0 +1,11 @@
+Diseña un codigo en java que permita cifrar y descifrar un fichero de texto utilizanfo un algoritmo de clave simetrica.
+Se deberan cumplir las siguientes condiciones:
+    -El texto en claro que contendra el fichero sera tu nombre y tus apellido.
+    -El fichero, se llamara nombre_cifrado.txt y estara ubicado en una carpeta llamada archivos en la raiz del proyecto
+    -Se utilizara el algoritmo AES con modo ECB y PKCS5Padding para realizar el cifrado utilizando como clave simetrica el hash de tu nombre calculado
+    con el algoritmo SHA3-256
+    -Se tendra una clase para cifrar(Cifrado) y una clase para descifrar(Descifrado) que contendra el metodo main para ejecutar
+    cada proceso cuando se desee. Se dispondra de una clase AESTools donde implementaraas los metodos necesarios para realizar el cifrado
+    y descifrado
+    -Una vez cifrado o descifrado, se indicara por pantalla el valor del hash de la clave de cifrado en hexadecimal, ademas de si se ha
+    cifrado/descifrado en hexadecimal, ademas de si se ha cifrado/descifrado correctamente
